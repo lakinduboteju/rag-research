@@ -15,11 +15,11 @@ At its core, a traditional RAG system is not a single model but a multi-componen
 ``` mermaid
 graph TD
     A[User Query] --> B{Convert to Embedding};
-    B --> C;
-    C -- Similarity Search --> D;
+    B --> C[Vector Database];
+    C -- Similarity Search --> D[Relevant Documents];
     A --> E{Augment Prompt};
     D --> E;
-    E --> F[Large Language Model (Generator)];
+    E --> F["Large Language Model (Generator)"];
     F --> G[Final Answer];
 
     subgraph Retriever
