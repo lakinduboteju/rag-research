@@ -24,19 +24,17 @@ The following flowchart illustrates the dynamic, cyclical nature of the Agentic 
 ``` mermaid
 graph TD
     A[User Query] --> B{Agent: Decompose & Plan};
-    B --> C{Agent: Select Tool};
-    C -- e.g., Search Query --> D;
-    D --> E;
-    E --> F{Agent: Reflect & Update State};
-    F -- Is information sufficient? --> G{Generate Final Answer};
-    F -- No --> B;
-    G --> H[Final Answer];
-
-    subgraph Agent Loop
-        B
-        C
-        F
+    
+    subgraph "Agent Loop (Plan-Act-Observe-Reflect)"
+        B --> C{Agent: Select Tool};
+        C -- e.g., Search Query --> D[Action: Execute Tool];
+        D --> E[Observation: Get Tool Output];
+        E --> F{Agent: Reflect & Update State};
+        F -- No, need more info --> B;
     end
+
+    F -- Yes, info is sufficient --> G{Generate Final Answer};
+    G --> H[Final Answer];
 ```
 
 *Figure 2*: The workflow of an Agentic RAG system, highlighting the iterative loop of planning, acting, and reflecting that allows the agent to dynamically gather information before generating a final answer.
