@@ -41,14 +41,14 @@ The operation of a RAG system is logically divided into two distinct stages: a p
 
 **Stage 1: Ingestion**: This is the preparatory stage where the external knowledge base is created and maintained. It is a multi-step process that transforms raw data into a format optimized for fast and accurate retrieval. The process typically involves:
 
-    1. **Data Loading**: Sourcing data from various locations, such as internal company databases, document repositories (e.g., PDFs, text files), APIs, or scraped webpages.
+1. **Data Loading**: Sourcing data from various locations, such as internal company databases, document repositories (e.g., PDFs, text files), APIs, or scraped webpages.
 
-    2. **Data Cleaning and Preprocessing**: Removing irrelevant information, correcting errors, and structuring the data for consistency.
+2. **Data Cleaning and Preprocessing**: Removing irrelevant information, correcting errors, and structuring the data for consistency.
 
-    3. **Chunking**: Dividing large documents into smaller, semantically coherent chunks. This is a critical step, as it ensures that the embeddings capture specific concepts and that the context provided to the LLM is concise and relevant.
+3. **Chunking**: Dividing large documents into smaller, semantically coherent chunks. This is a critical step, as it ensures that the embeddings capture specific concepts and that the context provided to the LLM is concise and relevant.
 
-    4. **Embedding**: Using an embedding model to convert each text chunk into a high-dimensional vector representation.
+4. **Embedding**: Using an embedding model to convert each text chunk into a high-dimensional vector representation.
 
-    5. **Indexing**: Storing these vector embeddings, along with their corresponding text and metadata, in a specialized vector database. This database is optimized for efficient high-dimensional vector similarity searches, which is the core mechanism of the retrieval step.
+5. **Indexing**: Storing these vector embeddings, along with their corresponding text and metadata, in a specialized vector database. This database is optimized for efficient high-dimensional vector similarity searches, which is the core mechanism of the retrieval step.
 
 **Stage 2: Inference**: This is the real-time process that is triggered when a user submits a query. It encompasses the three-part pipeline described previously: the user's query is embedded, the retriever searches the indexed vector database to find relevant document chunks, these chunks are used to augment the original query into a new prompt, and the generator LLM produces the final answer based on this augmented prompt.
