@@ -1,6 +1,6 @@
 ## The Advent of Agentic RAG: Introducing Autonomous Reasoning
 
-The inherent limitations of the static, linear pipeline of traditional RAG necessitated a paradigm shift. The response to this need was Agentic RAG, an evolution that embeds an autonomous AI agent into the RAG process, transforming it from a simple data retrieval mechanism into a dynamic, intelligent problem-solving framework. 1  This advancement allows the system to handle far more complex, multi-step queries by introducing capabilities such as planning, tool use, and iterative reasoning.
+The inherent limitations of the static, linear pipeline of traditional RAG necessitated a paradigm shift. The response to this need was Agentic RAG, an evolution that embeds an autonomous AI agent into the RAG process, transforming it from a simple data retrieval mechanism into a dynamic, intelligent problem-solving framework.  This advancement allows the system to handle far more complex, multi-step queries by introducing capabilities such as planning, tool use, and iterative reasoning.
 
 > [!NOTE]
 > Reference: [Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG](https://arxiv.org/html/2501.09136v1)
